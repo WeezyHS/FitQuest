@@ -1,4 +1,5 @@
 import 'package:fitquest/pages/Cadastro.dart';
+import 'package:fitquest/pages/TelaEdicaoDePerfil.dart';
 import 'package:fitquest/pages/home.dart';
 import 'package:fitquest/pages/login.dart';
 
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
 
       routes: {
         '/cadastro': (context) => Cadastro(),
-        '/home': (context) => Home()
+        '/home': (context) => Home(),
+        '/telaEdicao' : (context) => TelaEdicaoDePerfil()
       } ,
       home: Login(),
     );
