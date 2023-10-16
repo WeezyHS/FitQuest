@@ -7,10 +7,10 @@ class Home extends StatefulWidget {
   State<Home> createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
+class _HomeState extends State<Home> {
 
 
-  void _login() {
+  void _editar() {
     Navigator.pushNamed(context, '/telaEdicao');
   }
 
@@ -26,15 +26,19 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
           children: [
             Row(
               children: [
-                    IconButton(onPressed: _login,
+                    IconButton(onPressed: _editar,
                         icon:
-                        Icon(Icons.account_circle, color: Colors.white, size: 30.0), style: IconButton.styleFrom(backgroundColor: Colors.redAccent)),
+                        Icon(Icons.account_circle,
+                            color: Colors.white,
+                            size: 30.0)),
                     SizedBox(width: 80),
                     SvgPicture.asset('assets/images/logo.svg', height: 150),
                     SizedBox(width: 80),
                     IconButton(onPressed: null,
                         icon:
-                        Icon(Icons.notifications, color: Colors.white, size: 30.0))
+                        Icon(Icons.notifications,
+                            color: Colors.white,
+                            size: 30.0))
               ]
             ),
             Text("Carreira",
@@ -52,9 +56,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Progresso", style: TextStyle(color: Colors.white,
-                  fontSize:17.0,
-                  fontWeight: FontWeight.bold)),
+                  Text("Progresso",
+                      style: TextStyle(color: Colors.white,
+                      fontSize:17.0,
+                      fontWeight: FontWeight.bold)),
                   SizedBox(height: 15),
                   Container(
                     width: 250,
@@ -72,8 +77,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             SizedBox(height: 50),
             Text("Metas",
                 style: TextStyle(color: Colors.white,
-                    fontSize: 30.0,
-                    fontWeight: FontWeight.bold)),
+                fontSize: 30.0,
+                fontWeight: FontWeight.bold)),
             SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -88,7 +93,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Flexões", style: TextStyle(color: Colors.white,
+                      Text("Flexões",
+                          style: TextStyle(color: Colors.white,
                           fontSize:17.0,
                           fontWeight: FontWeight.bold)),
                       SizedBox(height: 15),
@@ -102,7 +108,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                         ),
                       ),
                       SizedBox(height: 15),
-                      Text("15 de 20", style: TextStyle(color: Colors.white,
+                      Text("15 de 20",
+                          style: TextStyle(color: Colors.white,
                           fontSize:12.0,
                           fontWeight: FontWeight.bold)
 
@@ -122,7 +129,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Barras", style: TextStyle(color: Colors.white,
+                      Text("Barras",
+                          style: TextStyle(color: Colors.white,
                           fontSize:17.0,
                           fontWeight: FontWeight.bold)),
                       SizedBox(height: 15),
@@ -136,7 +144,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                         ),
                       ),
                       SizedBox(height: 15),
-                  Text("10 de 20", style: TextStyle(color: Colors.white,
+                  Text("10 de 20",
+                      style: TextStyle(color: Colors.white,
                       fontSize:12.0,
                       fontWeight: FontWeight.bold))
 
@@ -159,7 +168,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Peso", style: TextStyle(color: Colors.white,
+                      Text("Peso",
+                          style: TextStyle(color: Colors.white,
                           fontSize:17.0,
                           fontWeight: FontWeight.bold)),
                       SizedBox(height: 15),
@@ -173,7 +183,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                         ),
                       ),
                       SizedBox(height: 15),
-                  Text("5kgs de 10", style: TextStyle(color: Colors.white,
+                  Text("5kgs de 10",
+                      style: TextStyle(color: Colors.white,
                       fontSize:12.0,
                       fontWeight: FontWeight.bold)),
                     ],
