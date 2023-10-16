@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(TelaEdicaoDePerfil());
-}
+
 
 class TelaEdicaoDePerfil extends StatelessWidget {
   @override
