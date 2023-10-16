@@ -11,7 +11,7 @@ class _HomeState extends State<Home> {
 
 
   void _editar() {
-    Navigator.pushNamed(context, '/telaEdicao');
+    Navigator.pushNamed(context, '/telaEditor');
   }
 
 

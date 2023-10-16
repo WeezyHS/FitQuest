@@ -1,18 +1,10 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(TelaEdicaoDePerfil());
+  runApp(TelaEditorDePerfil());
 }
-//
 
-class TelaEdicaoDePerfil extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: TelaEditorDePerfil(),
-    );
-  }
-}
+
 
 class TelaEditorDePerfil extends StatefulWidget {
   @override

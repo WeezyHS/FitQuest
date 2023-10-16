@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/cadastro': (context) => Cadastro(),
         '/home': (context) => Home(),
-        '/telaEdicao' : (context) => TelaEdicaoDePerfil()
+        '/telaEditor' : (context) => TelaEditorDePerfil()
       } ,
       home: Login(),
     );
