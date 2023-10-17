@@ -14,6 +14,10 @@ class _HomeState extends State<Home> {
     Navigator.pushNamed(context, '/telaEditor');
   }
 
+  void _detalhes_carreira() {
+    Navigator.pushNamed(context, '/detalhesCarreira');
+  }
+
 
 
   @override
@@ -46,32 +50,35 @@ class _HomeState extends State<Home> {
                             fontSize: 30.0,
                             fontWeight: FontWeight.bold)),
             SizedBox(height: 30),
-            Container(
-              width: 370,
-              height: 80,
-              decoration: BoxDecoration(
-                color: Colors.redAccent,
-                borderRadius: BorderRadius.circular(10)
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("Progresso",
-                      style: TextStyle(color: Colors.white,
-                      fontSize:17.0,
-                      fontWeight: FontWeight.bold)),
-                  SizedBox(height: 15),
-                  Container(
-                    width: 250,
-                    child: LinearProgressIndicator(
-                      backgroundColor: Colors.white,
-                      color: Color(0xFF0B235C),
-                      value: 0.5,
-                      borderRadius: BorderRadius.circular(100)
+            InkWell(
+              onTap: _detalhes_carreira ,
+              child: Container(
+                width: 370,
+                height: 80,
+                decoration: BoxDecoration(
+                  color: Colors.redAccent,
+                  borderRadius: BorderRadius.circular(10)
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Progresso",
+                        style: TextStyle(color: Colors.white,
+                        fontSize:17.0,
+                        fontWeight: FontWeight.bold)),
+                    SizedBox(height: 15),
+                    Container(
+                      width: 250,
+                      child: LinearProgressIndicator(
+                        backgroundColor: Colors.white,
+                        color: Color(0xFF0B235C),
+                        value: 0.5,
+                        borderRadius: BorderRadius.circular(100)
+                      ),
                     ),
-                  ),
-                  
-                ],
+                    
+                  ],
+                ),
               ),
             ),
             SizedBox(height: 50),
