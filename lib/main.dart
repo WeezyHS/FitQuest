@@ -2,6 +2,7 @@ import 'package:fitquest/pages/Cadastro.dart';
 import 'package:fitquest/pages/TelaEdicaoDePerfil.dart';
 import 'package:fitquest/pages/home.dart';
 import 'package:fitquest/pages/login.dart';
+import 'package:fitquest/pages/detalhes_carreira.dart';
 
 
 import 'package:flutter/material.dart';
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/cadastro': (context) => Cadastro(),
         '/home': (context) => Home(),
-        '/telaEditor' : (context) => TelaEditorDePerfil()
+        '/telaEditor' : (context) => TelaEditorDePerfil(),
+        '/detalhesCarreira' : (context) => detalhes_carreira()
       } ,
       home: Login(),
     );
