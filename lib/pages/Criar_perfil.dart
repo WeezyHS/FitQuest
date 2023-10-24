@@ -29,7 +29,6 @@ class _CriarPerfilState extends State<Criar_perfil> {
   }
 
   void _login() {
-
     if (isButtonEnabled) {
       Navigator.pushNamed(context, '/home');
     }
@@ -166,13 +165,60 @@ class _CriarPerfilState extends State<Criar_perfil> {
                 ),
               ),
             ),
+            SizedBox(height: 16),
+            TextFormField(
+              style: TextStyle(color: Colors.white),
+              controller: _sexController,
+              decoration: InputDecoration(
+                hintText: "Quantidade de barras:",
+                hintStyle: TextStyle(color: Colors.blueGrey),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                  borderSide: BorderSide(
+                    color: Colors.redAccent,
+                    width: 2.5,
+                  ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                  borderSide: BorderSide(
+                    color: Colors.redAccent,
+                  ),
+                ),
+              ),
+              keyboardType: TextInputType.number,
+            ),
+            SizedBox(height: 16),
+            TextFormField(
+              style: TextStyle(color: Colors.white),
+              controller: _sexController,
+              decoration: InputDecoration(
+                hintText: "Quantidade de flexões:",
+                hintStyle: TextStyle(color: Colors.blueGrey),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                  borderSide: BorderSide(
+                    color: Colors.redAccent,
+                    width: 2.5,
+                  ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                  borderSide: BorderSide(
+                    color: Colors.redAccent,
+                  ),
+                ),
+              ),
+              keyboardType: TextInputType.number,
+            ),
             SizedBox(height: 32),
             Center(
               child: ElevatedButton(
                 onPressed: isButtonEnabled ? _login : null,
                 child: Text('Criar Perfil'),
                 style: TextButton.styleFrom(
-                  backgroundColor: isButtonEnabled ? Colors.redAccent : Colors.grey,
+                  backgroundColor:
+                      isButtonEnabled ? Colors.redAccent : Colors.grey,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0),
                   ),
