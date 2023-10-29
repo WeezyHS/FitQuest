@@ -64,24 +64,25 @@ class _detalhes_metaState extends State<DetalhesDaMeta> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Container(
-                            height: 70,
-                            width: 70,
+                            height: 75,
+                            width: 75,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
                                     image:
                                         AssetImage('assets/images/push_up.png'),
                                     fit: BoxFit.cover)),
                           ),
+                          SizedBox(height: 20),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
                                   "Você deve fazer 15 exercícios para avançar de nível.",
                                   style: TextStyle(
-                                      fontSize: 9.0,
+                                      fontSize: 12.0,
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold)),
-                              SizedBox(height: 80),
+                              SizedBox(height: 60),
                               //ESPAÇO PARA DIGITAR A QUANTIDADE QUE O USUÁRIO FEZ
                               TextFormField(
                                 style: TextStyle(color: Colors.white),
@@ -93,14 +94,15 @@ class _detalhes_metaState extends State<DetalhesDaMeta> {
                                   focusedBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(20.0),
                                     borderSide: BorderSide(
-                                      color: Colors.redAccent,
+                                      color: Color.fromARGB(255, 47, 46, 46),
                                       width: 2.5,
                                     ),
                                   ),
                                   enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(20.0),
                                     borderSide: BorderSide(
-                                      color: Colors.redAccent,
+                                      color:
+                                          const Color.fromARGB(255, 47, 46, 46),
                                     ),
                                   ),
                                 ),
@@ -121,25 +123,25 @@ class _detalhes_metaState extends State<DetalhesDaMeta> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Container(
-                            height: 60,
-                            width: 60,
+                            height: 70,
+                            width: 70,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
                                     image:
                                         AssetImage('assets/images/pull_up.png'),
                                     fit: BoxFit.cover)),
                           ),
-                          SizedBox(height: 15),
+                          SizedBox(height: 30),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
                                   "Você deve perder 8 kg para avançar de nível.",
                                   style: TextStyle(
-                                      fontSize: 9.0,
+                                      fontSize: 12.0,
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold)),
-                              SizedBox(height: 15),
+                              SizedBox(height: 35),
                               //ESPAÇO PARA DIGITAR A QUANTIDADE QUE O USUÁRIO PERDEU
                               TextFormField(
                                 style: TextStyle(color: Colors.white),
@@ -151,14 +153,15 @@ class _detalhes_metaState extends State<DetalhesDaMeta> {
                                   focusedBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(20.0),
                                     borderSide: BorderSide(
-                                      color: Colors.redAccent,
+                                      color:
+                                          const Color.fromARGB(255, 47, 46, 46),
                                       width: 2.5,
                                     ),
                                   ),
                                   enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(20.0),
                                     borderSide: BorderSide(
-                                      color: Colors.redAccent,
+                                      color: Color.fromARGB(255, 47, 46, 46),
                                     ),
                                   ),
                                 ),
