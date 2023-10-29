@@ -8,6 +8,13 @@ class TelaEditorDePerfil extends StatefulWidget {
   _EstadoTelaEditorDePerfil createState() => _EstadoTelaEditorDePerfil();
 }
 
+class ImageData {
+  final File imageFile;
+  final DateTime addedDate;
+  ImageData(this.imageFile, this.addedDate);
+}
+
+
 class _EstadoTelaEditorDePerfil extends State<TelaEditorDePerfil> {
   String nomeSobrenome = "";
   String nick = "";
@@ -17,17 +24,15 @@ class _EstadoTelaEditorDePerfil extends State<TelaEditorDePerfil> {
   String sexo = "";
   int metaBarrasConsecutivas = 0;
   int metaFlexoesConsecutivas = 0;
-  List<File> _images = [];
+  List<ImageData> _images = [];
   double _gridHeight = 400;
 
   Future<void> _selecionarImagem() async {
-    final pickedFile = await ImagePicker().pickImage(
-        source: ImageSource.gallery);
+    final pickedFile = await ImagePicker().pickImage(source: ImageSource.camera);
     setState(() {
       if (pickedFile != null) {
-        _images.add(File(pickedFile.path));
-      } else {
-        print('Nenhuma imagem selecionada.');
+        _images.add(ImageData(File(pickedFile.path), DateTime.now()));
+        _images.sort((a, b) => b.addedDate.compareTo(a.addedDate));
       }
     });
   }
@@ -167,12 +172,17 @@ class _EstadoTelaEditorDePerfil extends State<TelaEditorDePerfil> {
                   );
                 },
                 child: Text('Atualizar Perfil'),
+                style: ElevatedButton.styleFrom(primary: Colors.redAccent),
               ),
+
               SizedBox(height: 16.0),
+
               ElevatedButton(
                 onPressed: _selecionarImagem,
-                child: Text('Adicionar Foto'),
+                child: Text('Adicionar Foto da câmera'),
+                style: ElevatedButton.styleFrom(primary: Colors.redAccent),
               ),
+
               SizedBox(height: 16.0),
               Container(
                 height: _gridHeight,
@@ -184,9 +194,17 @@ class _EstadoTelaEditorDePerfil extends State<TelaEditorDePerfil> {
                   ),
                   itemCount: _images.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return Image.file(_images[index], fit: BoxFit.cover);
+                    return Column(
+                      children: [
+                        Text(
+                          "${_images[index].addedDate.day}/${_images[index].addedDate.month}/${_images[index].addedDate.year}",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        Expanded(child: Image.file(_images[index].imageFile, fit: BoxFit.cover)),
+                      ],
+                    );
                   },
-                ),
+                )
               ),
             ],
           ),
