@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
-
 class TelaEditorDePerfil extends StatefulWidget {
   @override
   _EstadoTelaEditorDePerfil createState() => _EstadoTelaEditorDePerfil();
@@ -13,7 +12,6 @@ class ImageData {
   final DateTime addedDate;
   ImageData(this.imageFile, this.addedDate);
 }
-
 
 class _EstadoTelaEditorDePerfil extends State<TelaEditorDePerfil> {
   String nomeSobrenome = "";
@@ -28,7 +26,8 @@ class _EstadoTelaEditorDePerfil extends State<TelaEditorDePerfil> {
   double _gridHeight = 400;
 
   Future<void> _selecionarImagem() async {
-    final pickedFile = await ImagePicker().pickImage(source: ImageSource.camera);
+    final pickedFile =
+        await ImagePicker().pickImage(source: ImageSource.camera);
     setState(() {
       if (pickedFile != null) {
         _images.add(ImageData(File(pickedFile.path), DateTime.now()));
@@ -40,10 +39,10 @@ class _EstadoTelaEditorDePerfil extends State<TelaEditorDePerfil> {
   InputDecoration inputDecoration = InputDecoration(
     labelStyle: TextStyle(color: Colors.white),
     hintStyle: TextStyle(color: Colors.white),
-    enabledBorder: UnderlineInputBorder(
-        borderSide: BorderSide(color: Colors.white)),
-    focusedBorder: UnderlineInputBorder(
-        borderSide: BorderSide(color: Colors.white)),
+    enabledBorder:
+        UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
+    focusedBorder:
+        UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
   );
 
   @override
@@ -67,18 +66,21 @@ class _EstadoTelaEditorDePerfil extends State<TelaEditorDePerfil> {
                       children: [
                         CircleAvatar(
                           radius: 50,
-                          backgroundImage: AssetImage(
-                              'seu_caminho_da_imagem.jpg'),
+                          backgroundImage:
+                              AssetImage('seu_caminho_da_imagem.jpg'),
                         ),
                         Positioned(
                           right: 0,
                           bottom: 0,
                           child: Padding(
                             padding: EdgeInsets.all(8.0),
-                            child: Icon(
-                              Icons.edit,
+                            child: IconButton(
+                              icon: Icon(Icons.edit),
                               color: Colors.white,
-                              size: 24.0,
+                              iconSize: 24.0,
+                              onPressed: () {
+                                _selecionarImagem();
+                              },
                             ),
                           ),
                         ),
@@ -88,7 +90,8 @@ class _EstadoTelaEditorDePerfil extends State<TelaEditorDePerfil> {
                 ),
               ),
               TextFormField(
-                decoration: inputDecoration.copyWith(labelText: 'Nome e Sobrenome'),
+                decoration:
+                    inputDecoration.copyWith(labelText: 'Nome e Sobrenome'),
                 style: TextStyle(color: Colors.white),
                 onChanged: (value) {
                   setState(() {
@@ -145,7 +148,8 @@ class _EstadoTelaEditorDePerfil extends State<TelaEditorDePerfil> {
                 },
               ),
               TextFormField(
-                decoration: inputDecoration.copyWith(labelText: 'Meta de Barras Consecutivas'),
+                decoration: inputDecoration.copyWith(
+                    labelText: 'Meta de Barras Consecutivas'),
                 style: TextStyle(color: Colors.white),
                 keyboardType: TextInputType.number,
                 onChanged: (value) {
@@ -155,7 +159,8 @@ class _EstadoTelaEditorDePerfil extends State<TelaEditorDePerfil> {
                 },
               ),
               TextFormField(
-                decoration: inputDecoration.copyWith(labelText: 'Meta de Flexões Consecutivas'),
+                decoration: inputDecoration.copyWith(
+                    labelText: 'Meta de Flexões Consecutivas'),
                 style: TextStyle(color: Colors.white),
                 keyboardType: TextInputType.number,
                 onChanged: (value) {
@@ -174,38 +179,36 @@ class _EstadoTelaEditorDePerfil extends State<TelaEditorDePerfil> {
                 child: Text('Atualizar Perfil'),
                 style: ElevatedButton.styleFrom(primary: Colors.redAccent),
               ),
-
               SizedBox(height: 16.0),
-
               ElevatedButton(
                 onPressed: _selecionarImagem,
                 child: Text('Adicionar Foto da câmera'),
                 style: ElevatedButton.styleFrom(primary: Colors.redAccent),
               ),
-
               SizedBox(height: 16.0),
               Container(
-                height: _gridHeight,
-                child: GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3,
-                    crossAxisSpacing: 10.0,
-                    childAspectRatio: 1.0,
-                  ),
-                  itemCount: _images.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Column(
-                      children: [
-                        Text(
-                          "${_images[index].addedDate.day}/${_images[index].addedDate.month}/${_images[index].addedDate.year}",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        Expanded(child: Image.file(_images[index].imageFile, fit: BoxFit.cover)),
-                      ],
-                    );
-                  },
-                )
-              ),
+                  height: _gridHeight,
+                  child: GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3,
+                      crossAxisSpacing: 10.0,
+                      childAspectRatio: 1.0,
+                    ),
+                    itemCount: _images.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Column(
+                        children: [
+                          Text(
+                            "${_images[index].addedDate.day}/${_images[index].addedDate.month}/${_images[index].addedDate.year}",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          Expanded(
+                              child: Image.file(_images[index].imageFile,
+                                  fit: BoxFit.cover)),
+                        ],
+                      );
+                    },
+                  )),
             ],
           ),
         ),
