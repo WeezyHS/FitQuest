@@ -144,6 +144,7 @@ class _detalhes_metaState extends State<DetalhesDaMeta> {
                         ],
                       ),
                     ),
+                    SizedBox(height: 20),
                   ],
                 ),
               ],
