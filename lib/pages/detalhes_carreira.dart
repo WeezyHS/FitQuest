@@ -8,6 +8,27 @@ class detalhes_carreira extends StatefulWidget {
 }
 
 class _detalhes_carreiraState extends State<detalhes_carreira> {
+
+  void _showDialog(String titulo, String conteudo) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(titulo, style: TextStyle(fontWeight: FontWeight.bold),),
+          content: Text(conteudo),
+          actions: <Widget>[
+            TextButton(
+              child: Text('Fechar'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -113,6 +134,8 @@ class _detalhes_carreiraState extends State<detalhes_carreira> {
                             right: 10,
                             child: IconButton(
                               onPressed: () {
+                                _showDialog("Flexões",
+                                            "Levante e abaixe o seu corpo com os braços, mantendo-o reto. Este exercício trabalha os músculos do peito, ombro e tríceps.");
                               },
                               icon: Icon(Icons.info, color: Colors.white, size: 22.0),
                             ),
@@ -172,6 +195,8 @@ class _detalhes_carreiraState extends State<detalhes_carreira> {
                             right: 10,
                             child: IconButton(
                               onPressed: () {
+                                _showDialog("Barra",
+                                            "Segurando uma barra horizontal fixa e com as mãos viradas para a frente, eleve o seu corpo até o ponto em que o seu queixo ultrapasse a altura da barra. Este exercício trabalha os músculos do braço, antebraço, costas e ombros.");
                               },
                               icon: Icon(Icons.info, color: Colors.white, size: 22.0),
                             ),
@@ -233,6 +258,8 @@ class _detalhes_carreiraState extends State<detalhes_carreira> {
                         right: 10,
                         child: IconButton(
                           onPressed: () {
+                            _showDialog("Peso",
+                                "Para perder peso de forma saudável e subir de nível, é essencial combinar uma alimentação equilibrada com atividade física regular. Priorize refeições ricas em vegetais, proteínas magras e evite excesso de açúcar e gorduras. Mantenha-se hidratado e focado em seus exercícios!");
                           },
                           icon: Icon(Icons.info, color: Colors.white, size: 22.0),
                         ),
