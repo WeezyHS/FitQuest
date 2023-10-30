@@ -7,6 +7,15 @@ class DetalhesDaMeta extends StatefulWidget {
   State<DetalhesDaMeta> createState() => _detalhes_metaState();
 }
 
+InputDecoration inputDecoration = InputDecoration(
+  labelStyle: TextStyle(color: Colors.white),
+  hintStyle: TextStyle(color: Colors.white),
+  enabledBorder:
+      UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
+  focusedBorder:
+      UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
+);
+
 class _detalhes_metaState extends State<DetalhesDaMeta> {
   @override
   Widget build(BuildContext context) {
@@ -85,34 +94,16 @@ class _detalhes_metaState extends State<DetalhesDaMeta> {
                               SizedBox(height: 60),
                               //ESPAÇO PARA DIGITAR A QUANTIDADE QUE O USUÁRIO FEZ
                               TextFormField(
+                                decoration: inputDecoration.copyWith(
+                                    labelText: "Quantidade que você fez"),
                                 style: TextStyle(color: Colors.white),
-                                decoration: InputDecoration(
-                                  hintText: "Quantidade que você fez",
-                                  hintStyle: TextStyle(
-                                      color:
-                                          Color.fromARGB(255, 255, 255, 255)),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(20.0),
-                                    borderSide: BorderSide(
-                                      color: Color.fromARGB(255, 47, 46, 46),
-                                      width: 2.5,
-                                    ),
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(20.0),
-                                    borderSide: BorderSide(
-                                      color:
-                                          const Color.fromARGB(255, 47, 46, 46),
-                                    ),
-                                  ),
-                                ),
                               ),
                             ],
                           ),
                         ],
                       ),
                     ),
-                    SizedBox(width: 10),
+                    SizedBox(height: 5),
                     Container(
                       width: 500,
                       height: 250,
@@ -127,8 +118,8 @@ class _detalhes_metaState extends State<DetalhesDaMeta> {
                             width: 70,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
-                                    image:
-                                        AssetImage('assets/images/pull_up.png'),
+                                    image: AssetImage(
+                                        'assets/images/lose_weight.png'),
                                     fit: BoxFit.cover)),
                           ),
                           SizedBox(height: 30),
@@ -144,27 +135,9 @@ class _detalhes_metaState extends State<DetalhesDaMeta> {
                               SizedBox(height: 35),
                               //ESPAÇO PARA DIGITAR A QUANTIDADE QUE O USUÁRIO PERDEU
                               TextFormField(
+                                decoration: inputDecoration.copyWith(
+                                    labelText: "Quantidade que você perdeu"),
                                 style: TextStyle(color: Colors.white),
-                                decoration: InputDecoration(
-                                  hintText: "Quantidade que você perdeu",
-                                  hintStyle: TextStyle(
-                                      color: const Color.fromARGB(
-                                          255, 255, 255, 255)),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(20.0),
-                                    borderSide: BorderSide(
-                                      color:
-                                          const Color.fromARGB(255, 47, 46, 46),
-                                      width: 2.5,
-                                    ),
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(20.0),
-                                    borderSide: BorderSide(
-                                      color: Color.fromARGB(255, 47, 46, 46),
-                                    ),
-                                  ),
-                                ),
                               ),
                             ],
                           ),
