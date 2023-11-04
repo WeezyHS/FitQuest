@@ -12,6 +12,8 @@ class _CriarPerfilState extends State<Criar_perfil> {
   final TextEditingController _heightController = TextEditingController();
   final TextEditingController _weightController = TextEditingController();
   final TextEditingController _sexController = TextEditingController();
+  final TextEditingController _barController = TextEditingController();
+  final TextEditingController _flexController = TextEditingController();
   String selectedGender = 'Feminino';
 
   bool isButtonEnabled = false;
@@ -168,7 +170,7 @@ class _CriarPerfilState extends State<Criar_perfil> {
             SizedBox(height: 16),
             TextFormField(
               style: TextStyle(color: Colors.white),
-              controller: _sexController,
+              controller: _barController,
               decoration: InputDecoration(
                 hintText: "Quantidade de barras:",
                 hintStyle: TextStyle(color: Colors.blueGrey),
@@ -191,7 +193,7 @@ class _CriarPerfilState extends State<Criar_perfil> {
             SizedBox(height: 16),
             TextFormField(
               style: TextStyle(color: Colors.white),
-              controller: _sexController,
+              controller: _flexController,
               decoration: InputDecoration(
                 hintText: "Quantidade de flexões:",
                 hintStyle: TextStyle(color: Colors.blueGrey),
