@@ -6,6 +6,7 @@ import 'package:fitquest/pages/detalhes_carreira.dart';
 import 'package:fitquest/pages/progresso_barra.dart';
 import 'package:fitquest/pages/progresso_flexao.dart';
 import 'package:fitquest/pages/progresso_peso.dart';
+import 'package:fitquest/pages/DetalhesDaMeta.dart';
 
 
 import 'package:flutter/material.dart';
