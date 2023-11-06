@@ -14,6 +14,16 @@ class _detalhes_carreiraState extends State<detalhes_carreira> {
     Navigator.pushNamed(context, '/progressoFlexao');
   }
 
+  void _progresso_barra() {
+
+    Navigator.pushNamed(context, '/progressoBarra');
+  }
+
+  void _progresso_peso() {
+
+    Navigator.pushNamed(context, '/progressoPeso');
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -140,63 +150,66 @@ class _detalhes_carreiraState extends State<detalhes_carreira> {
                       ),
                     ),
                     SizedBox(width: 10),
-                    Container(
-                      width: 180,
-                      height: 200,
-                      decoration: BoxDecoration(
-                        color: Colors.redAccent,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Stack(
-                        children: [
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                height: 60,
-                                width: 60,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/images/pull_up.png'),
-                                    fit: BoxFit.cover,
+                    InkWell(
+                      onTap: _progresso_barra,
+                      child: Container(
+                        width: 180,
+                        height: 200,
+                        decoration: BoxDecoration(
+                          color: Colors.redAccent,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Stack(
+                          children: [
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  height: 60,
+                                  width: 60,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: AssetImage('assets/images/pull_up.png'),
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              SizedBox(height: 15),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    "15/",
-                                    style: TextStyle(
-                                      fontSize: 30.0,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
+                                SizedBox(height: 15),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "15/",
+                                      style: TextStyle(
+                                        fontSize: 30.0,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    "20",
-                                    style: TextStyle(
-                                      fontSize: 15.0,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
+                                    Text(
+                                      "20",
+                                      style: TextStyle(
+                                        fontSize: 15.0,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          Positioned(
-                            bottom: 2,
-                            right: 2,
-                            child: IconButton(
-                              onPressed: () {
-
-                              },
-                              icon: Icon(Icons.info, color: Colors.white, size: 22.0),
+                                  ],
+                                ),
+                              ],
                             ),
-                          ),
-                        ],
+                            Positioned(
+                              bottom: 2,
+                              right: 2,
+                              child: IconButton(
+                                onPressed: () {
+
+                                },
+                                icon: Icon(Icons.info, color: Colors.white, size: 22.0),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ],
@@ -211,63 +224,66 @@ class _detalhes_carreiraState extends State<detalhes_carreira> {
                   ),
                 ),
                 SizedBox(height: 25),
-                Container(
-                  width: 370,
-                  height: 170,
-                  decoration: BoxDecoration(
-                    color: Colors.redAccent,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Stack(
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            height: 60,
-                            width: 60,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage('assets/images/bar.png'),
-                                fit: BoxFit.cover,
+                InkWell(
+                  onTap: _progresso_peso,
+                  child: Container(
+                    width: 370,
+                    height: 170,
+                    decoration: BoxDecoration(
+                      color: Colors.redAccent,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Stack(
+                      children: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: 60,
+                              width: 60,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage('assets/images/bar.png'),
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
-                          ),
-                          SizedBox(height: 15),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "15/",
-                                style: TextStyle(
-                                  fontSize: 30.0,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
+                            SizedBox(height: 15),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "15/",
+                                  style: TextStyle(
+                                    fontSize: 30.0,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
-                              ),
-                              Text(
-                                "20",
-                                style: TextStyle(
-                                  fontSize: 15.0,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
+                                Text(
+                                  "20",
+                                  style: TextStyle(
+                                    fontSize: 15.0,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Positioned(
-                        bottom: 2,
-                        right: 2,
-                        child: IconButton(
-                          onPressed: () {
-
-                              },
-                          icon: Icon(Icons.info, color: Colors.white, size: 22.0),
+                              ],
+                            ),
+                          ],
                         ),
-                      ),
-                    ],
+                        Positioned(
+                          bottom: 2,
+                          right: 2,
+                          child: IconButton(
+                            onPressed: () {
+
+                                },
+                            icon: Icon(Icons.info, color: Colors.white, size: 22.0),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
