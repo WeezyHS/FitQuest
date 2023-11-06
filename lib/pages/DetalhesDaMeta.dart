@@ -12,6 +12,7 @@ InputDecoration inputDecoration = InputDecoration(
   hintStyle: TextStyle(color: Colors.white),
   enabledBorder:
       UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
+  contentPadding: EdgeInsets.symmetric(horizontal: 10.0),
   focusedBorder:
       UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
 );
