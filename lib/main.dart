@@ -3,9 +3,7 @@ import 'package:fitquest/pages/TelaEdicaoDePerfil.dart';
 import 'package:fitquest/pages/home.dart';
 import 'package:fitquest/pages/login.dart';
 import 'package:fitquest/pages/detalhes_carreira.dart';
-import 'package:fitquest/pages/progresso_barra.dart';
 import 'package:fitquest/pages/progresso_flexao.dart';
-import 'package:fitquest/pages/progresso_peso.dart';
 
 
 import 'package:flutter/material.dart';
@@ -27,9 +25,7 @@ class MyApp extends StatelessWidget {
         '/home': (context) => Home(),
         '/telaEditor' : (context) => TelaEditorDePerfil(),
         '/detalhesCarreira' : (context) => detalhes_carreira(),
-        '/progressoFlexao' : (context) => progresso_flexao(),
-        '/progressoBarra' : (context) => progresso_barra(),
-        '/progressoPeso' : (context) => progresso_peso()
+        '/progressoFlexao' : (context) => progresso_flexao()
       } ,
       home: Login(),
     );
