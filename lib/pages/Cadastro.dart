@@ -158,7 +158,11 @@ class _CadastroState extends State<Cadastro> {
               SizedBox(height: 32),
               Center(
                 child: ElevatedButton(
-                  onPressed: isButtonEnabled ? _login : null,
+                  onPressed: (){
+                    isButtonEnabled ? _login : null;
+                    Navigator.pushNamed(context, '/criarPerfil');
+                  },
+
                   child: Text('Cadastrar'),
                   style: TextButton.styleFrom(
                     backgroundColor: isButtonEnabled ? Colors.redAccent : Colors.grey,

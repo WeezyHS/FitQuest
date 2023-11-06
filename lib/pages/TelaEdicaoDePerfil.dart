@@ -149,7 +149,7 @@ class _EstadoTelaEditorDePerfil extends State<TelaEditorDePerfil> {
               ),
               TextFormField(
                 decoration: inputDecoration.copyWith(
-                    labelText: 'Meta de Barras Consecutivas'),
+                    labelText: 'Quantidade de barras Consecutivas'),
                 style: TextStyle(color: Colors.white),
                 keyboardType: TextInputType.number,
                 onChanged: (value) {
@@ -160,7 +160,7 @@ class _EstadoTelaEditorDePerfil extends State<TelaEditorDePerfil> {
               ),
               TextFormField(
                 decoration: inputDecoration.copyWith(
-                    labelText: 'Meta de Flexões Consecutivas'),
+                    labelText: 'Quantidade de flexões Consecutivas'),
                 style: TextStyle(color: Colors.white),
                 keyboardType: TextInputType.number,
                 onChanged: (value) {

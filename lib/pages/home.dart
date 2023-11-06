@@ -3,6 +3,15 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 
 class Home extends StatefulWidget {
+  final int barCount;
+  final int flexCount;
+
+  const Home({
+    Key? key,
+    required this.barCount,
+    required this.flexCount,
+  }) : super(key: key);
+
   @override
   State<Home> createState() => _HomeState();
 }
@@ -22,6 +31,8 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    int nextLevelBarCount = widget.barCount + 2;
+    int nextLevelFlexCount = widget.flexCount + 2;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -102,8 +113,9 @@ class _HomeState extends State<Home> {
                     children: [
                       Text("Flexões",
                           style: TextStyle(color: Colors.white,
-                          fontSize:17.0,
-                          fontWeight: FontWeight.bold)),
+                              fontSize:17.0,
+                              fontWeight: FontWeight.bold)),
+
                       SizedBox(height: 15),
                       Container(
                         width: 100,
@@ -115,13 +127,11 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                       SizedBox(height: 15),
-                      Text("15 de 20",
+                      Text("${widget.flexCount} de $nextLevelFlexCount",
                           style: TextStyle(color: Colors.white,
-                          fontSize:12.0,
-                          fontWeight: FontWeight.bold)
-
+                              fontSize:12.0,
+                              fontWeight: FontWeight.bold),
                       ),
-
                     ],
                   ),
                 ),
@@ -138,8 +148,8 @@ class _HomeState extends State<Home> {
                     children: [
                       Text("Barras",
                           style: TextStyle(color: Colors.white,
-                          fontSize:17.0,
-                          fontWeight: FontWeight.bold)),
+                              fontSize:17.0,
+                              fontWeight: FontWeight.bold)),
                       SizedBox(height: 15),
                       Container(
                         width: 100,
@@ -151,11 +161,11 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                       SizedBox(height: 15),
-                  Text("10 de 20",
-                      style: TextStyle(color: Colors.white,
-                      fontSize:12.0,
-                      fontWeight: FontWeight.bold))
-
+                      Text("${widget.barCount} de $nextLevelBarCount",
+                          style: TextStyle(color: Colors.white,
+                              fontSize:12.0,
+                              fontWeight: FontWeight.bold)
+                      ),
                     ],
                   ),
                 ),
