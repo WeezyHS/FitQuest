@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class Criar_perfil extends StatefulWidget {
-  const Criar_perfil({super.key});
+class CriarPerfil extends StatefulWidget {
+  const CriarPerfil({Key? key}) : super(key: key);
 
   @override
-  State<Criar_perfil> createState() => _CriarPerfilState();
+  State<CriarPerfil> createState() => _CriarPerfilState();
 }
 
-class _CriarPerfilState extends State<Criar_perfil> {
+class _CriarPerfilState extends State<CriarPerfil> {
   final TextEditingController _heightController = TextEditingController();
   final TextEditingController _weightController = TextEditingController();
   final TextEditingController _sexController = TextEditingController();
   final TextEditingController _barController = TextEditingController();
   final TextEditingController _flexController = TextEditingController();
-  String selectedGender = 'Feminino';
 
   bool isButtonEnabled = false;
 
@@ -24,17 +23,47 @@ class _CriarPerfilState extends State<Criar_perfil> {
     _heightController.addListener(_updateButtonState);
     _weightController.addListener(_updateButtonState);
     _sexController.addListener(_updateButtonState);
+    _barController.addListener(_updateButtonState);
+    _flexController.addListener(_updateButtonState);
+  }
+
+  @override
+  void dispose() {
+    _heightController.dispose();
+    _weightController.dispose();
+    _sexController.dispose();
+    _barController.dispose();
+    _flexController.dispose();
+    super.dispose();
   }
 
   void _updateButtonState() {
-    final sex = _sexController.text;
+    setState(() {
+      isButtonEnabled = _heightController.text.isNotEmpty &&
+          _weightController.text.isNotEmpty &&
+          _sexController.text.isNotEmpty &&
+          _barController.text.isNotEmpty &&
+          _flexController.text.isNotEmpty;
+    });
   }
 
   void _login() {
     if (isButtonEnabled) {
-      Navigator.pushNamed(context, '/home');
+      // Passa a contagem de barras e flexões para a tela Home.
+      int barCount = int.parse(_barController.text);
+      int flexCount = int.parse(_flexController.text);
+
+      Navigator.pushNamed(
+        context,
+        '/home',
+        arguments: {
+          'barCount': barCount,
+          'flexCount': flexCount,
+        },
+      );
     }
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -218,13 +247,21 @@ class _CriarPerfilState extends State<Criar_perfil> {
               child: ElevatedButton(
                 onPressed: isButtonEnabled ? _login : null,
                 child: Text('Criar Perfil'),
-                style: TextButton.styleFrom(
-                  backgroundColor:
-                      isButtonEnabled ? Colors.redAccent : Colors.grey,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                        (Set<MaterialState> states) {
+                      if (states.contains(MaterialState.disabled)) {
+                        return Colors.grey; // Disable color
+                      }
+                      return Colors.redAccent; // Regular color
+                    },
                   ),
-                  padding: EdgeInsets.all(20),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                  ),
+                  padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(20)),
                 ),
               ),
             ),
