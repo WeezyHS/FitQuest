@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
               flexCount: args['flexCount']!,
             );
       },
-
+        '/Home' : (context) => Home(barCount: 0, flexCount: 0),
         '/telaEditor' : (context) => TelaEditorDePerfil(),
         '/detalhesCarreira' : (context) => detalhes_carreira(),
         '/progressoFlexao' : (context) => progresso_flexao(),

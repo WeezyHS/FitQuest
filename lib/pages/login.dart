@@ -35,7 +35,7 @@ class _LoginState extends State<Login> {
   void _login() {
 
     if (_isButtonEnabled) {
-      Navigator.pushNamed(context, '/home');
+      Navigator.pushNamed(context, '/Home');
     }
 
   }
@@ -122,9 +122,12 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                   onPressed: _isButtonEnabled ? _login : null,
+
                   child: Text("Entrar", style: TextStyle(color: Colors.white)),
                 ),
+
                 SizedBox(height: 20),
+
                 TextButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/cadastro');
