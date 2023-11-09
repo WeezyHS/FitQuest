@@ -5,6 +5,7 @@ import 'package:fitquest/pages/home.dart';
 import 'package:fitquest/pages/login.dart';
 import 'package:fitquest/pages/detalhes_carreira.dart';
 import 'package:fitquest/pages/progresso_flexao.dart';
+import 'package:fitquest/pages/tutorial_barra.dart';
 import 'package:fitquest/pages/tutorial_flexao.dart';
 
 
@@ -36,7 +37,8 @@ class MyApp extends StatelessWidget {
         '/detalhesCarreira' : (context) => detalhes_carreira(),
         '/progressoFlexao' : (context) => progresso_flexao(),
         '/criarPerfil' : (context) => CriarPerfil(),
-        '/tutorialFlexao' : (context) => tutorial_flexao()
+        '/tutorialFlexao' : (context) => tutorial_flexao(),
+        '/tutorialBarra' : (context) => tutorial_barra()
 
       } ,
       home: Login(),

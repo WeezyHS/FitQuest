@@ -29,6 +29,11 @@ class _detalhes_carreiraState extends State<detalhes_carreira> {
     Navigator.pushNamed(context, '/tutorialFlexao');
   }
 
+  void _tutorial_barra() {
+
+    Navigator.pushNamed(context, '/tutorialBarra');
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -208,7 +213,7 @@ class _detalhes_carreiraState extends State<detalhes_carreira> {
                               right: 2,
                               child: IconButton(
                                 onPressed: () {
-
+                                  _tutorial_barra();
                                 },
                                 icon: Icon(Icons.info, color: Colors.white, size: 22.0),
                               ),
