@@ -5,6 +5,7 @@ import 'package:fitquest/pages/home.dart';
 import 'package:fitquest/pages/login.dart';
 import 'package:fitquest/pages/detalhes_carreira.dart';
 import 'package:fitquest/pages/progresso_flexao.dart';
+import 'package:fitquest/pages/tutorial_flexao.dart';
 
 
 import 'package:flutter/material.dart';
@@ -34,7 +35,8 @@ class MyApp extends StatelessWidget {
         '/telaEditor' : (context) => TelaEditorDePerfil(),
         '/detalhesCarreira' : (context) => detalhes_carreira(),
         '/progressoFlexao' : (context) => progresso_flexao(),
-        '/criarPerfil' : (context) => CriarPerfil()
+        '/criarPerfil' : (context) => CriarPerfil(),
+        '/tutorialFlexao' : (context) => tutorial_flexao()
 
       } ,
       home: Login(),
