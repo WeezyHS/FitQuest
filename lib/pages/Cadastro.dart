@@ -42,7 +42,7 @@ class _CadastroState extends State<Cadastro> {
     void _login() {
 
       if (isButtonEnabled) {
-        Navigator.pushNamed(context, '/home');
+        Navigator.pushNamed(context, '/criarPerfil');
       }
 
     }
@@ -157,20 +157,19 @@ class _CadastroState extends State<Cadastro> {
               ),
               SizedBox(height: 32),
               Center(
-                child: ElevatedButton(
-                  onPressed: (){
-                    isButtonEnabled ? _login : null;
-                    Navigator.pushNamed(context, '/criarPerfil');
-                  },
+                child:
 
-                  child: Text('Cadastrar'),
+                TextButton(
                   style: TextButton.styleFrom(
-                    backgroundColor: isButtonEnabled ? Colors.redAccent : Colors.grey,
+                    backgroundColor: isButtonEnabled ? Colors.redAccent : Colors.blueGrey,
+                    padding: EdgeInsets.all(20),
+                    foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20.0),
                     ),
-                    padding: EdgeInsets.all(20),
                   ),
+                  onPressed: isButtonEnabled ? _login : null,
+                  child: Text("Entrar", style: TextStyle(color: Colors.white)),
                 ),
               ),
             ],
