@@ -7,6 +7,7 @@ import 'package:fitquest/pages/detalhes_carreira.dart';
 import 'package:fitquest/pages/progresso_flexao.dart';
 import 'package:fitquest/pages/tutorial_barra.dart';
 import 'package:fitquest/pages/tutorial_flexao.dart';
+import 'package:fitquest/pages/tutorial_peso.dart';
 
 
 import 'package:flutter/material.dart';
@@ -38,7 +39,8 @@ class MyApp extends StatelessWidget {
         '/progressoFlexao' : (context) => progresso_flexao(),
         '/criarPerfil' : (context) => CriarPerfil(),
         '/tutorialFlexao' : (context) => tutorial_flexao(),
-        '/tutorialBarra' : (context) => tutorial_barra()
+        '/tutorialBarra' : (context) => tutorial_barra(),
+        '/tutorialPeso' : (context) => tutorial_peso()
 
       } ,
       home: Login(),
