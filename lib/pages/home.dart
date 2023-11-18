@@ -1,3 +1,4 @@
+import 'package:fitquest/pages/Criar_perfil2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -19,10 +20,10 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 
 
-  void _editar() {
-    Navigator.pushNamed(context, '/telaEditor');
-  }
 
+  void CriarPerfil2() {
+    Navigator.pushNamed(context, '/Criar_perfil2');
+  }
   void _detalhes_carreira() {
     Navigator.pushNamed(context, '/detalhesCarreira');
   }
@@ -41,7 +42,7 @@ class _HomeState extends State<Home> {
           children: [
             Row(
               children: [
-                    IconButton(onPressed: _editar,
+                    IconButton(onPressed: CriarPerfil2,
                         icon:
                         Icon(Icons.account_circle,
                             color: Colors.white,
