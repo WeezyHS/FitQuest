@@ -33,7 +33,6 @@ dependencies:
     sdk: flutter
   flutter_svg: ^0.22.0
   image_picker: ^0.8.1
-  url_launcher: ^6.2.1
   fl_chart: ^0.64.0
   youtube_player_flutter: ^8.1.2
 
