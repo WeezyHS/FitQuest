@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
 class detalhes_carreira extends StatefulWidget {
-  const detalhes_carreira({Key? key});
+  final int flexCount;
+  final int barCount;
+
+  const detalhes_carreira({
+    Key? key,
+    required this.flexCount,
+    required this.barCount,
+  }) : super(key: key);
 
   @override
   State<detalhes_carreira> createState() => _detalhes_carreiraState();
@@ -41,6 +48,9 @@ class _detalhes_carreiraState extends State<detalhes_carreira> {
 
   @override
   Widget build(BuildContext context) {
+    int nextLevelBarCount = widget.barCount + 2;
+    int nextLevelFlexCount = widget.flexCount + 2;
+
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Color(0xFF0B235C),
@@ -131,7 +141,7 @@ class _detalhes_carreiraState extends State<detalhes_carreira> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      "15/",
+                                      "${widget.flexCount}/",
                                       style: TextStyle(
                                         fontSize: 30.0,
                                         color: Colors.white,
@@ -139,7 +149,7 @@ class _detalhes_carreiraState extends State<detalhes_carreira> {
                                       ),
                                     ),
                                     Text(
-                                      "20",
+                                      "$nextLevelFlexCount",
                                       style: TextStyle(
                                         fontSize: 15.0,
                                         color: Colors.white,
@@ -194,7 +204,7 @@ class _detalhes_carreiraState extends State<detalhes_carreira> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      "15/",
+                                      "${widget.barCount}/",
                                       style: TextStyle(
                                         fontSize: 30.0,
                                         color: Colors.white,
@@ -202,7 +212,7 @@ class _detalhes_carreiraState extends State<detalhes_carreira> {
                                       ),
                                     ),
                                     Text(
-                                      "20",
+                                      "$nextLevelBarCount",
                                       style: TextStyle(
                                         fontSize: 15.0,
                                         color: Colors.white,

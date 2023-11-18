@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
             );
       },
         '/Home' : (context) => Home(barCount: 0, flexCount: 0),
-        '/detalhesCarreira' : (context) => detalhes_carreira(),
+        '/detalhesCarreira' : (context) => detalhes_carreira(flexCount: 0, barCount: 0),
         '/progressoFlexao' : (context) => progresso_flexao(),
         '/criarPerfil' : (context) => CriarPerfil(),
         '/Criar_perfil2': (context) => CriarPerfil2(),

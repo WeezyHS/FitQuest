@@ -1,4 +1,5 @@
 import 'package:fitquest/pages/Criar_perfil2.dart';
+import 'package:fitquest/pages/detalhes_carreira.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -25,7 +26,15 @@ class _HomeState extends State<Home> {
     Navigator.pushNamed(context, '/Criar_perfil2');
   }
   void _detalhes_carreira() {
-    Navigator.pushNamed(context, '/detalhesCarreira');
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => detalhes_carreira(
+          flexCount: widget.flexCount,
+          barCount: widget.barCount,
+        ),
+      ),
+    );
   }
 
 
