@@ -212,7 +212,7 @@ class _detalhes_carreiraState extends State<detalhes_carreira> {
                                       ),
                                     ),
                                     Text(
-                                      "$nextLevelBarCount",
+                                      "${nextLevelBarCount}",
                                       style: TextStyle(
                                         fontSize: 15.0,
                                         color: Colors.white,
