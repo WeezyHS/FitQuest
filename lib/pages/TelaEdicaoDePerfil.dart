@@ -25,7 +25,7 @@ class _EstadoTelaEditorDePerfil extends State<TelaEditorDePerfil> {
   List<ImageData> _images = [];
   double _gridHeight = 400;
 
-  Future<void> _selecionarImagem() async {
+  /*Future<void> _selecionarImagem() async {
     final pickedFile =
         await ImagePicker().pickImage(source: ImageSource.camera);
     setState(() {
@@ -34,6 +34,19 @@ class _EstadoTelaEditorDePerfil extends State<TelaEditorDePerfil> {
         _images.sort((a, b) => b.addedDate.compareTo(a.addedDate));
       }
     });
+  }*/
+
+  XFile? imagem;
+
+  selecionarImagem() async {
+    final ImagePicker picker = ImagePicker();
+
+    try {
+      XFile? file = await picker.pickImage(source: ImageSource.gallery);
+      if (file != null) setState(() => imagem = file);
+    } catch (e) {
+      print(e);
+    }
   }
 
   InputDecoration inputDecoration = InputDecoration(
@@ -69,7 +82,7 @@ class _EstadoTelaEditorDePerfil extends State<TelaEditorDePerfil> {
                           backgroundImage:
                               AssetImage('seu_caminho_da_imagem.jpg'),
                         ),
-                        Positioned(
+                        /*Positioned(
                           right: 0,
                           bottom: 0,
                           child: Padding(
@@ -83,6 +96,14 @@ class _EstadoTelaEditorDePerfil extends State<TelaEditorDePerfil> {
                               },
                             ),
                           ),
+                        ),*/
+                        ListTile(
+                          leading: Icon(Icons.attach_file),
+                          title: Text('Selecionar imagem'),
+                          onTap: selecionarImagem,
+                          trailing: imagem != null
+                              ? Image.file(File(imagem!.path))
+                              : null,
                         ),
                       ],
                     ),
@@ -181,7 +202,8 @@ class _EstadoTelaEditorDePerfil extends State<TelaEditorDePerfil> {
               ),
               SizedBox(height: 16.0),
               ElevatedButton(
-                onPressed: _selecionarImagem,
+                //onPressed: _selecionarImagem,
+                onPressed: selecionarImagem,
                 child: Text('Adicionar Foto da câmera'),
                 style: ElevatedButton.styleFrom(primary: Colors.redAccent),
               ),
