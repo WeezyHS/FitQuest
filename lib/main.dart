@@ -31,9 +31,11 @@ class MyApp extends StatelessWidget {
             return Home(
               barCount: args['barCount']!,
               flexCount: args['flexCount']!,
+              weight: args['weight']!,
+              expectedWeight: args['expectedWeight']!,
             );
       },
-        '/Home' : (context) => Home(barCount: 0, flexCount: 0),
+        '/Home' : (context) => Home(barCount: 0, flexCount: 0, weight: 0, expectedWeight: 0),
         '/detalhesCarreira' : (context) => detalhes_carreira(flexCount: 0, barCount: 0),
         '/progressoFlexao' : (context) => progresso_flexao(),
         '/criarPerfil' : (context) => CriarPerfil(),

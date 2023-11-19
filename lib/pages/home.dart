@@ -7,11 +7,15 @@ import 'package:flutter_svg/flutter_svg.dart';
 class Home extends StatefulWidget {
   final int barCount;
   final int flexCount;
+  final int weight;
+  final int expectedWeight;
 
   const Home({
     Key? key,
     required this.barCount,
     required this.flexCount,
+    required this.weight,
+    required this.expectedWeight
   }) : super(key: key);
 
   @override
@@ -31,7 +35,7 @@ class _HomeState extends State<Home> {
       MaterialPageRoute(
         builder: (context) => detalhes_carreira(
           flexCount: widget.flexCount,
-          barCount: widget.barCount,
+          barCount: widget.barCount
         ),
       ),
     );
@@ -210,7 +214,7 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                       SizedBox(height: 15),
-                  Text("5kgs de 10",
+                  Text("${widget.weight}kgs até ${widget.expectedWeight}kgs",
                       style: TextStyle(color: Colors.white,
                       fontSize:12.0,
                       fontWeight: FontWeight.bold)),

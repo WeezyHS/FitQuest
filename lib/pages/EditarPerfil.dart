@@ -17,6 +17,7 @@ class ImageData {
 class _CriarPerfilState extends State<EditProfile> {
   final TextEditingController _heightController = TextEditingController();
   final TextEditingController _weightController = TextEditingController();
+  final TextEditingController _expectedWeightController = TextEditingController();
   final TextEditingController _sexController = TextEditingController();
   final TextEditingController _barController = TextEditingController();
   final TextEditingController _flexController = TextEditingController();
@@ -31,6 +32,7 @@ class _CriarPerfilState extends State<EditProfile> {
     super.initState();
     _heightController.addListener(_updateButtonState);
     _weightController.addListener(_updateButtonState);
+    _expectedWeightController.addListener(_updateButtonState);
     _sexController.addListener(_updateButtonState);
     _barController.addListener(_updateButtonState);
     _flexController.addListener(_updateButtonState);
@@ -40,6 +42,7 @@ class _CriarPerfilState extends State<EditProfile> {
   void dispose() {
     _heightController.dispose();
     _weightController.dispose();
+    _expectedWeightController.dispose();
     _sexController.dispose();
     _barController.dispose();
     _flexController.dispose();
@@ -50,6 +53,7 @@ class _CriarPerfilState extends State<EditProfile> {
     setState(() {
       isButtonEnabled = _heightController.text.isNotEmpty &&
           _weightController.text.isNotEmpty &&
+          _expectedWeightController.text.isNotEmpty &&
           _sexController.text.isNotEmpty &&
           _barController.text.isNotEmpty &&
           _flexController.text.isNotEmpty;
@@ -61,6 +65,8 @@ class _CriarPerfilState extends State<EditProfile> {
       // Passa a contagem de barras e flexões para a tela Home.
       int barCount = int.parse(_barController.text);
       int flexCount = int.parse(_flexController.text);
+      int weight = int.parse(_weightController.text);
+      int expectedWeight = int.parse(_expectedWeightController.text);
 
       Navigator.pushNamed(
         context,
@@ -68,6 +74,8 @@ class _CriarPerfilState extends State<EditProfile> {
         arguments: {
           'barCount': barCount,
           'flexCount': flexCount,
+          'weight' : weight,
+          'expectedWeight' : expectedWeight
         },
       );
     }
@@ -176,9 +184,9 @@ class _CriarPerfilState extends State<EditProfile> {
             SizedBox(height: 16),
             TextFormField(
               style: TextStyle(color: Colors.white),
-              controller: _heightController,
+              controller: _weightController,
               decoration: InputDecoration(
-                hintText: "Peso (kg):",
+                hintText: "Peso atual (kg):",
                 hintStyle: TextStyle(color: Colors.blueGrey),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20.0),
@@ -197,9 +205,32 @@ class _CriarPerfilState extends State<EditProfile> {
               keyboardType: TextInputType.number,
             ),
             SizedBox(height: 16),
+              TextFormField(
+                style: TextStyle(color: Colors.white),
+                controller: _expectedWeightController,
+                decoration: InputDecoration(
+                  hintText: "Meta de peso (kg):",
+                  hintStyle: TextStyle(color: Colors.blueGrey),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                    borderSide: BorderSide(
+                      color: Colors.redAccent,
+                      width: 2.5,
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                    borderSide: BorderSide(
+                      color: Colors.redAccent,
+                    ),
+                  ),
+                ),
+                keyboardType: TextInputType.number,
+              ),
+              SizedBox(height: 16),
             TextFormField(
               style: TextStyle(color: Colors.white),
-              controller: _weightController,
+              controller: _heightController,
               decoration: InputDecoration(
                 hintText: "Idade:",
                 hintStyle: TextStyle(color: Colors.blueGrey),
@@ -315,7 +346,7 @@ class _CriarPerfilState extends State<EditProfile> {
         ElevatedButton(
           onPressed: _selecionarImagem,
           child: Text('Adicionar Foto da câmera'),
-          style: ElevatedButton.styleFrom(primary: Colors.redAccent),
+          style: ElevatedButton.styleFrom(backgroundColor: Colors.redAccent),
         ),
 
         SizedBox(height: 16.0),

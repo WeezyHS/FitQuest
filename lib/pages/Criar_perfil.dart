@@ -11,6 +11,7 @@ class CriarPerfil extends StatefulWidget {
 class _CriarPerfilState extends State<CriarPerfil> {
   final TextEditingController _heightController = TextEditingController();
   final TextEditingController _weightController = TextEditingController();
+  final TextEditingController _expectedWeightController = TextEditingController();
   final TextEditingController _sexController = TextEditingController();
   final TextEditingController _barController = TextEditingController();
   final TextEditingController _flexController = TextEditingController();
@@ -22,6 +23,7 @@ class _CriarPerfilState extends State<CriarPerfil> {
     super.initState();
     _heightController.addListener(_updateButtonState);
     _weightController.addListener(_updateButtonState);
+    _expectedWeightController.addListener(_updateButtonState);
     _sexController.addListener(_updateButtonState);
     _barController.addListener(_updateButtonState);
     _flexController.addListener(_updateButtonState);
@@ -31,6 +33,7 @@ class _CriarPerfilState extends State<CriarPerfil> {
   void dispose() {
     _heightController.dispose();
     _weightController.dispose();
+    _expectedWeightController.dispose();
     _sexController.dispose();
     _barController.dispose();
     _flexController.dispose();
@@ -41,6 +44,7 @@ class _CriarPerfilState extends State<CriarPerfil> {
     setState(() {
       isButtonEnabled = _heightController.text.isNotEmpty &&
           _weightController.text.isNotEmpty &&
+          _expectedWeightController.text.isNotEmpty &&
           _sexController.text.isNotEmpty &&
           _barController.text.isNotEmpty &&
           _flexController.text.isNotEmpty;
@@ -52,6 +56,8 @@ class _CriarPerfilState extends State<CriarPerfil> {
       // Passa a contagem de barras e flexões para a tela Home.
       int barCount = int.parse(_barController.text);
       int flexCount = int.parse(_flexController.text);
+      int weight = int.parse(_weightController.text);
+      int expectedWeight = int.parse(_expectedWeightController.text);
 
       Navigator.pushNamed(
         context,
@@ -59,6 +65,9 @@ class _CriarPerfilState extends State<CriarPerfil> {
         arguments: {
           'barCount': barCount,
           'flexCount': flexCount,
+          'weight': weight,
+          'expectedWeight': expectedWeight
+
         },
       );
     }
@@ -156,7 +165,30 @@ class _CriarPerfilState extends State<CriarPerfil> {
               style: TextStyle(color: Colors.white),
               controller: _weightController,
               decoration: InputDecoration(
-                hintText: "Peso:",
+                hintText: "Peso atual (kg):",
+                hintStyle: TextStyle(color: Colors.blueGrey),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                  borderSide: BorderSide(
+                    color: Colors.redAccent,
+                    width: 2.5,
+                  ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                  borderSide: BorderSide(
+                    color: Colors.redAccent,
+                  ),
+                ),
+              ),
+              keyboardType: TextInputType.number,
+            ),
+            SizedBox(height: 16),
+            TextFormField(
+              style: TextStyle(color: Colors.white),
+              controller: _expectedWeightController,
+              decoration: InputDecoration(
+                hintText: "Meta de peso (kg):",
                 hintStyle: TextStyle(color: Colors.blueGrey),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20.0),
