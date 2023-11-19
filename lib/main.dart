@@ -1,7 +1,6 @@
 import 'package:fitquest/pages/Cadastro.dart';
 import 'package:fitquest/pages/Criar_perfil.dart';
-import 'package:fitquest/pages/Criar_perfil2.dart';
-import 'package:fitquest/pages/TelaEdicaoDePerfil.dart';
+import 'package:fitquest/pages/EditarPerfil.dart';
 import 'package:fitquest/pages/home.dart';
 import 'package:fitquest/pages/login.dart';
 import 'package:fitquest/pages/detalhes_carreira.dart';
@@ -38,7 +37,7 @@ class MyApp extends StatelessWidget {
         '/detalhesCarreira' : (context) => detalhes_carreira(flexCount: 0, barCount: 0),
         '/progressoFlexao' : (context) => progresso_flexao(),
         '/criarPerfil' : (context) => CriarPerfil(),
-        '/Criar_perfil2': (context) => CriarPerfil2(),
+        '/editarPerfil': (context) => EditProfile(),
         '/tutorialFlexao' : (context) => tutorial_flexao(),
         '/tutorialBarra' : (context) => tutorial_barra(),
         '/tutorialPeso' : (context) => tutorial_peso()

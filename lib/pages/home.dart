@@ -1,4 +1,4 @@
-import 'package:fitquest/pages/Criar_perfil2.dart';
+import 'package:fitquest/pages/EditarPerfil.dart';
 import 'package:fitquest/pages/detalhes_carreira.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -22,8 +22,8 @@ class _HomeState extends State<Home> {
 
 
 
-  void CriarPerfil2() {
-    Navigator.pushNamed(context, '/Criar_perfil2');
+  void editarPerfil() {
+    Navigator.pushNamed(context, '/editarPerfil');
   }
   void _detalhes_carreira() {
     Navigator.push(
@@ -51,7 +51,7 @@ class _HomeState extends State<Home> {
           children: [
             Row(
               children: [
-                    IconButton(onPressed: CriarPerfil2,
+                    IconButton(onPressed: editarPerfil,
                         icon:
                         Icon(Icons.account_circle,
                             color: Colors.white,
