@@ -3,11 +3,15 @@ import 'package:flutter/material.dart';
 class detalhes_carreira extends StatefulWidget {
   final int flexCount;
   final int barCount;
+  final int weight;
+  final int expectedWeight;
 
   const detalhes_carreira({
     Key? key,
-    required this.flexCount,
     required this.barCount,
+    required this.flexCount,
+    required this.weight,
+    required this.expectedWeight,
   }) : super(key: key);
 
   @override
@@ -278,7 +282,7 @@ class _detalhes_carreiraState extends State<detalhes_carreira> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  "15/",
+                                  "${widget.weight}/",
                                   style: TextStyle(
                                     fontSize: 30.0,
                                     color: Colors.white,
@@ -286,7 +290,7 @@ class _detalhes_carreiraState extends State<detalhes_carreira> {
                                   ),
                                 ),
                                 Text(
-                                  "20",
+                                  "${widget.expectedWeight}",
                                   style: TextStyle(
                                     fontSize: 15.0,
                                     color: Colors.white,

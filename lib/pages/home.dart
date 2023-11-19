@@ -35,7 +35,9 @@ class _HomeState extends State<Home> {
       MaterialPageRoute(
         builder: (context) => detalhes_carreira(
           flexCount: widget.flexCount,
-          barCount: widget.barCount
+          barCount: widget.barCount,
+          weight: widget.weight,
+          expectedWeight: widget.expectedWeight,
         ),
       ),
     );

@@ -4,6 +4,7 @@ import 'package:fitquest/pages/EditarPerfil.dart';
 import 'package:fitquest/pages/home.dart';
 import 'package:fitquest/pages/login.dart';
 import 'package:fitquest/pages/detalhes_carreira.dart';
+import 'package:fitquest/pages/progresso_barra.dart';
 import 'package:fitquest/pages/progresso_flexao.dart';
 import 'package:fitquest/pages/tutorial_barra.dart';
 import 'package:fitquest/pages/tutorial_flexao.dart';
@@ -36,8 +37,14 @@ class MyApp extends StatelessWidget {
             );
       },
         '/Home' : (context) => Home(barCount: 0, flexCount: 0, weight: 0, expectedWeight: 0),
-        '/detalhesCarreira' : (context) => detalhes_carreira(flexCount: 0, barCount: 0),
+        '/detalhesCarreira' : (context) => detalhes_carreira(
+          barCount: 0,
+          flexCount: 0,
+          weight: 0,
+          expectedWeight: 0,
+        ),
         '/progressoFlexao' : (context) => progresso_flexao(),
+        '/progressoBarra' : (context) => progresso_barra(),
         '/criarPerfil' : (context) => CriarPerfil(),
         '/editarPerfil': (context) => EditProfile(),
         '/tutorialFlexao' : (context) => tutorial_flexao(),
