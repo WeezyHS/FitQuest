@@ -91,21 +91,49 @@ class _HomeState extends State<Home> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Progresso",
-                        style: TextStyle(color: Colors.white,
-                        fontSize:17.0,
-                        fontWeight: FontWeight.bold)),
-                    SizedBox(height: 15),
-                    Container(
-                      width: 250,
-                      child: LinearProgressIndicator(
-                        backgroundColor: Colors.white,
-                        color: Color(0xFF0B235C),
-                        value:  0.0,
-                        borderRadius: BorderRadius.circular(100)
+                    Text(
+                      "Progresso",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 17.0,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                    
+                    SizedBox(height: 15),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(right: 5), // Adicione um espaçamento à direita
+                          child: Text("1", style: TextStyle(color: Colors.white)),
+                        ),
+                        Container(
+                          width: 250,
+                          child: Stack(
+                            children: [
+                              LinearProgressIndicator(
+                                backgroundColor: Colors.white,
+                                color: Color(0xFF0B235C),
+                                value: 0.0, // Altere o valor conforme necessário
+                                borderRadius: BorderRadius.circular(100),
+                              ),
+                              Positioned(
+                                left: 5,  // Ajuste o espaçamento à esquerda
+                                child: Text("1", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                              ),
+                              Positioned(
+                                right: 5,  // Ajuste o espaçamento à direita
+                                child: Text("2", style: TextStyle(color: Colors.white)),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 5), // Adicione um espaçamento à esquerda
+                          child: Text("2", style: TextStyle(color: Colors.white)),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
