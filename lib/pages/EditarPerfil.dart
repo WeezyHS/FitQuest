@@ -96,10 +96,6 @@ class _CriarPerfilState extends State<EditProfile> {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Color(0xFF0B235C),
-        appBar: AppBar(
-          title: Text('Editar Perfil'),
-          backgroundColor: Colors.redAccent,
-        ),
         body: SingleChildScrollView(
           padding: EdgeInsets.all(16.0),
           child: Column(
@@ -108,6 +104,11 @@ class _CriarPerfilState extends State<EditProfile> {
               Center(
                 child: Column(
                   children: [
+                    Text("Edição de Perfil",
+                        style: TextStyle(color: Colors.white,
+                            fontSize: 30.0,
+                            fontWeight: FontWeight.bold)),
+                    SizedBox(height: 30),
                     Stack(
                       children: [
                         CircleAvatar(

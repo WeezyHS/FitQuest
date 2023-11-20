@@ -189,7 +189,6 @@ class _detalhes_carreiraState extends State<detalhes_carreira> {
                     ),
                     SizedBox(width: 10),
                     InkWell(
-                      onTap: _progresso_barra,
                       child: Container(
                         width: 180,
                         height: 200,
@@ -273,7 +272,6 @@ class _detalhes_carreiraState extends State<detalhes_carreira> {
                 ),
                 SizedBox(height: 25),
                 InkWell(
-                  onTap: _progresso_peso,
                   child: Container(
                     width: 370,
                     height: 170,
