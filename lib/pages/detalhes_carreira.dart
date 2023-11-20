@@ -118,7 +118,6 @@ class _detalhes_carreiraState extends State<detalhes_carreira> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     InkWell(
-                      onTap: _progresso_flexao,
                       child: Container(
                         width: 180,
                         height: 200,
@@ -172,6 +171,16 @@ class _detalhes_carreiraState extends State<detalhes_carreira> {
                                  _tutorial_flexao();
                                 },
                                 icon: Icon(Icons.info, color: Colors.white, size: 22.0),
+                              ),
+                            ),
+                            Positioned(
+                              bottom: 2,
+                              left: 2,
+                              child: IconButton(
+                                onPressed: () {
+                                  _progresso_flexao();
+                                },
+                                icon: Icon(Icons.graphic_eq_rounded, color: Colors.white, size: 22.0),
                               ),
                             ),
                           ],
@@ -235,6 +244,16 @@ class _detalhes_carreiraState extends State<detalhes_carreira> {
                                   _tutorial_barra();
                                 },
                                 icon: Icon(Icons.info, color: Colors.white, size: 22.0),
+                              ),
+                            ),
+                            Positioned(
+                              bottom: 2,
+                              left: 2,
+                              child: IconButton(
+                                onPressed: () {
+                                  _progresso_barra();
+                                },
+                                icon: Icon(Icons.graphic_eq_rounded, color: Colors.white, size: 22.0),
                               ),
                             ),
                           ],
@@ -309,6 +328,16 @@ class _detalhes_carreiraState extends State<detalhes_carreira> {
                                 _tutorial_peso();
                                 },
                             icon: Icon(Icons.info, color: Colors.white, size: 22.0),
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 2,
+                          left: 2,
+                          child: IconButton(
+                            onPressed: () {
+                              _progresso_peso();
+                            },
+                            icon: Icon(Icons.graphic_eq_rounded, color: Colors.white, size: 22.0),
                           ),
                         ),
                       ],

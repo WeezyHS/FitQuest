@@ -43,7 +43,9 @@ class _HomeState extends State<Home> {
     );
   }
 
-
+  double calculateCompletionPercentage(int currentValue, int nextLevelValue) {
+    return currentValue / nextLevelValue;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -99,7 +101,7 @@ class _HomeState extends State<Home> {
                       child: LinearProgressIndicator(
                         backgroundColor: Colors.white,
                         color: Color(0xFF0B235C),
-                        value: 0.5,
+                        value:  0.0,
                         borderRadius: BorderRadius.circular(100)
                       ),
                     ),
@@ -109,7 +111,7 @@ class _HomeState extends State<Home> {
               ),
             ),
             SizedBox(height: 50),
-            Text("Metas",
+            Text("Desafios",
                 style: TextStyle(color: Colors.white,
                 fontSize: 30.0,
                 fontWeight: FontWeight.bold)),
@@ -138,7 +140,7 @@ class _HomeState extends State<Home> {
                         child: LinearProgressIndicator(
                             backgroundColor: Colors.white,
                             color: Color(0xFF0B235C),
-                            value: 0.5,
+                            value: 0.0,
                             borderRadius: BorderRadius.circular(100)
                         ),
                       ),
@@ -172,7 +174,7 @@ class _HomeState extends State<Home> {
                         child: LinearProgressIndicator(
                             backgroundColor: Colors.white,
                             color: Color(0xFF0B235C),
-                            value: 0.5,
+                            value: 0.0 ,
                             borderRadius: BorderRadius.circular(100)
                         ),
                       ),
@@ -187,6 +189,11 @@ class _HomeState extends State<Home> {
                 ),
               ],
             ),
+            SizedBox(height: 50),
+            Text("Metas Pessoais",
+                style: TextStyle(color: Colors.white,
+                    fontSize:30.0,
+                    fontWeight: FontWeight.bold)),
             SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -211,7 +218,7 @@ class _HomeState extends State<Home> {
                         child: LinearProgressIndicator(
                             backgroundColor: Colors.white,
                             color: Color(0xFF0B235C),
-                            value: 0.5,
+                            value: 0.0,
                             borderRadius: BorderRadius.circular(100),
                         ),
                       ),
